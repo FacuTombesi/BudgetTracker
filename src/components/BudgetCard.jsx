@@ -24,18 +24,22 @@ export default function BudgetCard({ name, currentAmount, maxAmount, gray, onAdd
           <div className="me-2">{name}</div>
           <div className="d-flex align-items-baseline">
             {currencyFormatter.format(currentAmount)}
-            <span className="text-muted fs-6 ms-1">
-              / {currencyFormatter.format(maxAmount)}
-            </span>
+            {maxAmount && (
+              <span className="text-muted fs-6 ms-1">
+                / {currencyFormatter.format(maxAmount)}
+              </span>
+            )}
           </div>
         </Card.Title>
-        <ProgressBar
-          className="rounded-pill"
-          variant={getProgressBarVariant(currentAmount, maxAmount)}
-          min={0}
-          max={maxAmount}
-          now={currentAmount}
-        />
+        {maxAmount && (
+          <ProgressBar
+            className="rounded-pill"
+            variant={getProgressBarVariant(currentAmount, maxAmount)}
+            min={0}
+            max={maxAmount}
+            now={currentAmount}
+          />
+        )}
         <Stack direction="horizontal" gap="2" className="mt-4">
           <Button variant="outline-primary" className="ms-auto" onClick={onAddExpenseClick}>Add Expense</Button>
           <Button variant="outline-secondary">View Expense</Button>

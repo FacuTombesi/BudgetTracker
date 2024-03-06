@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const currencyFormatter = new Intl.NumberFormat(undefined, {
+export const currencyFormatter = new Intl.NumberFormat("es-US", {
   currency: "usd",
   style: "currency",
   minimumFractionDigits: 0
