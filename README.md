@@ -4,7 +4,7 @@
 
 ## About this project
 
-This is a project part of my Mini-Projects collection, made with React, JavaScript, HTML and CSS.
+This is a project part of my Mini-Projects collection, made with React, JavaScript, HTML and Bootstrap.
 
 ## Screenshots
 
