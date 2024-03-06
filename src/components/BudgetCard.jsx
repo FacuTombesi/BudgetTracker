@@ -8,7 +8,7 @@ function getProgressBarVariant(currentAmount, maxAmount) {
   return "danger";
 };
 
-export default function BudgetCard({ name, currentAmount, maxAmount, gray, onAddExpenseClick }) {
+export default function BudgetCard({ name, currentAmount, maxAmount, gray, onAddExpenseClick, hideButtons }) {
   const classNames = [];
 
   if (currentAmount > maxAmount) {
@@ -40,10 +40,12 @@ export default function BudgetCard({ name, currentAmount, maxAmount, gray, onAdd
             now={currentAmount}
           />
         )}
-        <Stack direction="horizontal" gap="2" className="mt-4">
-          <Button variant="outline-primary" className="ms-auto" onClick={onAddExpenseClick}>Add Expense</Button>
-          <Button variant="outline-secondary">View Expense</Button>
-        </Stack>
+        {!hideButtons && (
+          <Stack direction="horizontal" gap="2" className="mt-4">
+            <Button variant="outline-primary" className="ms-auto" onClick={onAddExpenseClick}>Add Expense</Button>
+            <Button variant="outline-secondary">View Expense</Button>
+          </Stack>
+        )}
       </Card.Body>
     </Card>
   );
