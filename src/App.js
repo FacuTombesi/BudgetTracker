@@ -1,13 +1,14 @@
-import { Button, Container, Stack } from "react-bootstrap";
+import { useState } from "react";
+import { Container } from "react-bootstrap";
+import { UNCATEGORIZED_BUDGET_ID, useBudgets } from "./context/BudgetContext";
+import Header from "./components/Header";
 import BudgetCard from "./components/BudgetCard";
+import TotalBudgetCard from "./components/TotalBudgetCard";
+import Footer from "./components/Footer";
 import UncategorizedBudgetCard from "./components/UncategorizedBudgetCard";
 import AddBudgetModal from "./components/AddBudgetModal";
 import AddExpenseModal from "./components/AddExpenseModal";
 import ViewExpensesModal from "./components/ViewExpensesModal";
-import { useState } from "react";
-import { UNCATEGORIZED_BUDGET_ID, useBudgets } from "./context/BudgetContext";
-import TotalBudgetCard from "./components/TotalBudgetCard";
-import Footer from "./components/Footer";
 
 function App() {
   const [showAddBudgetModal, setShowAddBudgetModal] = useState(false)
@@ -24,11 +25,10 @@ function App() {
   return (
     <>
       <Container className="my-4">
-        <Stack direction="horizontal" gap="2" className="mb-4">
-          <h1 className="me-auto">Budgets</h1>
-          <Button variant="primary" onClick={() => setShowAddBudgetModal(true)}>Add Budget</Button>
-          <Button variant="outline-primary" onClick={openAddExpenseModal}>Add Expense</Button>
-        </Stack>
+        <Header
+          onAddBudgetClick={() => setShowAddBudgetModal(true)}
+          onAddExpenseClick={openAddExpenseModal}
+        />
         <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill, minmax(300px, 1fr))", gap:"1rem", alignItems:"flex-start" }}>
           {budgets.map(budget => {
             const currentAmount = getBudgetExpenses(budget.id).reduce((total, expense) => total + expense.amount, 0)
@@ -44,8 +44,10 @@ function App() {
             )
           })}
           <UncategorizedBudgetCard onAddExpenseClick={openAddExpenseModal} onViewExpenseClick={() => setViewExpensesModalBudgetId(UNCATEGORIZED_BUDGET_ID)} />
-          <TotalBudgetCard />
         </div>
+      </Container>
+      <Container style={{ borderTop: "1px solid #DEE2E6", marginTop: "2rem", paddingTop: "2rem" }}>
+        <TotalBudgetCard />
       </Container>
       <AddBudgetModal show={showAddBudgetModal} handleClose={() => setShowAddBudgetModal(false)} />
       <AddExpenseModal
