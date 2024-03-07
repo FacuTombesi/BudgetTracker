@@ -7,6 +7,7 @@ import ViewExpensesModal from "./components/ViewExpensesModal";
 import { useState } from "react";
 import { UNCATEGORIZED_BUDGET_ID, useBudgets } from "./context/BudgetContext";
 import TotalBudgetCard from "./components/TotalBudgetCard";
+import Footer from "./components/Footer";
 
 function App() {
   const [showAddBudgetModal, setShowAddBudgetModal] = useState(false)
@@ -56,6 +57,7 @@ function App() {
         budgetId={viewExpensesModalBudgetId}
         handleClose={() => setViewExpensesModalBudgetId()}
       />
+      <Footer />
     </>
   );
 }
