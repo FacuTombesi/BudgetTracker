@@ -1,0 +1,44 @@
+body {
+  color: #494B4C;
+  background-color: #FFFFFF;
+  background-image: linear-gradient(to bottom, #FFFFFF 80%, rgba(84, 0, 207, 0.5));
+}
+
+.btn-primary {
+  background-color: #E000E0;
+  border: 1px solid #E000E0;
+}
+
+.btn-primary:hover {
+  background-color: #A800AD;
+  border: 1px solid #A800AD;
+}
+
+.btn-outline-primary {
+  border: 1px solid #E000E0;
+  color: #494B4C;
+}
+
+.btn-outline-primary:hover {
+  background-color: #E000E0;
+  border: 1px solid #E000E0;
+}
+
+.btn-outline-secondary {
+  border: 1px solid #5400CF;
+  color: #494B4C;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #5400CF;
+  border: 1px solid #5400CF;
+}
+
+/*
+pink: #E000E0
+pink hover: #A800AD
+purple: #5400CF
+black: #1E2022
+gray: #494B4C
+white: #EFEFEF
+*/
