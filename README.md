@@ -18,4 +18,4 @@ Budget Tracker is an app where you can keep track of your budgets and expenses. 
 
 ## Deploy
 
-[Weather App](https://ftbudgettracker.vercel.app/)
+[Budget Tracker](https://ftbudgettracker.vercel.app/)
