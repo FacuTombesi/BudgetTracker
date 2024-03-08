@@ -16,10 +16,16 @@ function App() {
   const [viewExpensesModalBudgetId, setViewExpensesModalBudgetId] = useState()
   const [addExpenseModalBudgetId, setAddExpenseModalBudgetId] = useState()
   const { budgets, getBudgetExpenses } = useBudgets()
+  const [creationDate] = useState(getCurrentDate())
 
   function openAddExpenseModal(budgetId) {
     setShowAddExpenseModal(true)
     setAddExpenseModalBudgetId(budgetId)
+  }
+
+  function getCurrentDate() {
+    const date = new Date()
+    return date.toLocaleDateString()
   }
 
   return (
@@ -35,6 +41,7 @@ function App() {
             return (
               <BudgetCard
                 key={budget.id}
+                creationDate={creationDate}
                 name={budget.name}
                 currentAmount={currentAmount}
                 maxAmount={budget.max}

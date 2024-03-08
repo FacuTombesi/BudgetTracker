@@ -18,6 +18,11 @@ export const BudgetsProvider = ({ children }) => {
     return expenses.filter(expense => expense.budgetId === budgetId)
   }
 
+  function getExpenseDate() {
+    const date = new Date()
+    return date.toLocaleDateString()
+  }
+
   function addBudget({ name, max }) {
     setBudgets(prevBudgets => {
       if (prevBudgets.find(budget => budget.name === name)) {
@@ -28,8 +33,9 @@ export const BudgetsProvider = ({ children }) => {
   }
 
   function addExpense({ description, amount, budgetId }) {
+    let expenseDate = getExpenseDate()
     setExpenses(prevExpenses => {
-      return [...prevExpenses, { id: uuidV4(), description, amount, budgetId }]
+      return [...prevExpenses, { id: uuidV4(), description, amount, expenseDate, budgetId }]
     })
   }
 
