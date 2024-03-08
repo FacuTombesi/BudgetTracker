@@ -2,6 +2,14 @@ body {
   color: #494B4C;
   background-color: #FFFFFF;
   background-image: linear-gradient(to bottom, #FFFFFF 80%, rgba(84, 0, 207, 0.5));
+  min-height: 100vh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 .btn-primary {

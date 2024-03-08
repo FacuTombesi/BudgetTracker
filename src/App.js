@@ -30,7 +30,7 @@ function App() {
 
   return (
     <>
-      <Container className="my-4">
+      <Container className="mb-4">
         <Header
           onAddBudgetClick={() => setShowAddBudgetModal(true)}
           onAddExpenseClick={openAddExpenseModal}
@@ -52,9 +52,9 @@ function App() {
           })}
           <UncategorizedBudgetCard onAddExpenseClick={openAddExpenseModal} onViewExpenseClick={() => setViewExpensesModalBudgetId(UNCATEGORIZED_BUDGET_ID)} />
         </div>
-      </Container>
-      <Container style={{ borderTop: "1px solid #DEE2E6", marginTop: "2rem", paddingTop: "2rem" }}>
-        <TotalBudgetCard />
+        <Container style={{ borderTop: "1px solid #DEE2E6", marginTop: "2rem", paddingTop: "2rem" }}>
+          <TotalBudgetCard />
+        </Container>
       </Container>
       <AddBudgetModal show={showAddBudgetModal} handleClose={() => setShowAddBudgetModal(false)} />
       <AddExpenseModal
