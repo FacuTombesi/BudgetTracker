@@ -1,6 +1,6 @@
 # Budget Tracker
 
-[![Budget Tracker](./public/img/budgettracker_project-thumbnail.svg)](https://ftbudgettracker.vercel.app/)
+[![Budget Tracker](./public/img/budgettracker_project-thumbnails.svg)](https://ftbudgettracker.vercel.app/)
 
 ## About this project
 
